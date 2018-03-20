@@ -1,6 +1,6 @@
-package banking.impl
+package completed.banking.impl
 
-import banking.EvilAccount
+import completed.banking.EvilAccount
 
 /**
  * Created by Simon on 02.01.2018.

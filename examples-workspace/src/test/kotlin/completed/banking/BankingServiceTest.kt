@@ -1,6 +1,6 @@
-package banking
+package completed.banking
 
-import banking.impl.SimpleAccount
+import completed.banking.impl.SimpleAccount
 import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.StringSpec
 

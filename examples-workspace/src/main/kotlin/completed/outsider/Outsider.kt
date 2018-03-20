@@ -1,4 +1,4 @@
-package outsider
+package completed.outsider
 
 /**
  * Created by Simon on 13.12.2017.
@@ -7,7 +7,7 @@ class Outsider {
 
 }
 
-public typealias Array = EvilOutsider
+typealias Array = EvilOutsider
 
 class EvilOutsider {
     private val innerArray: kotlin.Array<kotlin.String>

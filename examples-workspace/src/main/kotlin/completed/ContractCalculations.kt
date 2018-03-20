@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.Contract
+package completed
 
 /**
  * Created by Simon on 23.12.2017.
@@ -23,8 +23,8 @@ class NormalContract(): ContractElement(10000.0) {}
 class SpecialContract(): ContractElement(13000.0) {}
 
 open class Rate(value: Double): ContractElement(value){
-//    override infix fun with(other: ContractElement): ContractElement {
-//        return ContractElement(value * other.value)
+//    override infix fun with(other: completed.ContractElement): completed.ContractElement {
+//        return completed.ContractElement(value * other.value)
 //    }
 }
 class NormalRate(): Rate(0.05) {}
@@ -37,8 +37,8 @@ class NormalCommission(): ContractElement(1000.0) {}
 class SpecialCommission(): ContractElement(1000.0) {}
 
 open class Discount(value: Double): ContractElement(value){
-//    override infix fun with(other: ContractElement): ContractElement {
-//        return ContractElement(other.value - value * other.value)
+//    override infix fun with(other: completed.ContractElement): completed.ContractElement {
+//        return completed.ContractElement(other.value - value * other.value)
 //    }
 }
 class NormalDiscount(): Discount(0.10) {}

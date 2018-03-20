@@ -1,3 +1,6 @@
+package completed
+
+import completed.SimpleCalculations
 import io.kotlintest.specs.StringSpec
 
 /**

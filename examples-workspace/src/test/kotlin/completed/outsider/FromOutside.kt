@@ -1,5 +1,6 @@
-package outsider
+package completed.outsider
 
+import completed.outsider.Array
 import io.kotlintest.specs.StringSpec
 
 /**

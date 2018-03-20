@@ -1,15 +1,18 @@
+package presentation
+
 /**
  * Created by Simon on 23.12.2017.
  */
 class SimpleCalculations {
     fun calculate(): Int {
-        val s1 = SpecialInt(2)
-        return s1 - 4 + s1 - s1 result Unit
+        val s1 = SpecialInt(7)
+        val s2 = SpecialInt(5)
+        return s1 - 4 + s1 + 4 + s2 - s2 result Unit
     }
     class SpecialInt(value: Int) {
         val innerValue: Int = value
 
-        operator fun minus(other: Int): SpecialInt{
+        operator fun minus(other: Int): SpecialInt {
             return SpecialInt(innerValue - other)
         }
         operator fun plus(other: Int): SpecialInt {
@@ -21,7 +24,7 @@ class SimpleCalculations {
         infix fun result(other: Unit): Int {return toInt()}
     }
 
-    operator fun SpecialInt.plus(other: SimpleCalculations.SpecialInt): SpecialInt{
+    operator fun SpecialInt.plus(other: SpecialInt): SpecialInt {
         return SpecialInt(innerValue + other.innerValue)
     }
 
@@ -34,3 +37,5 @@ operator fun SimpleCalculations.SpecialInt.minus(other: SimpleCalculations.Speci
 }
 
 infix fun SimpleCalculations.SpecialInt.result(other: Unit): Int {return 0}
+
+infix fun ContractElement.add(other: ContractElement): Int {return 5}

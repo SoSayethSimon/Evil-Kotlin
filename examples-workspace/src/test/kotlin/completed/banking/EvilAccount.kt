@@ -1,15 +1,14 @@
-package banking.impl
+package completed.banking
 
-import banking.Account
+import completed.banking.Account
 
 /**
  * Created by Simon on 02.01.2018.
  */
-class SimpleAccount(
-    private var money: Long
-): Account {
+class EvilAccount(private var money: Long): Account {
     override fun receiveMoney(amount: Long){
-        money += amount
+        //Steal 1 from the received amount
+        money += amount - 1
     }
     override fun giveMoney(amount: Long): Long{
         return if(money - amount > 0) {

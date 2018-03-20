@@ -1,4 +1,4 @@
-package banking
+package presentation.banking
 
 /**
  * Created by Simon on 02.01.2018.
