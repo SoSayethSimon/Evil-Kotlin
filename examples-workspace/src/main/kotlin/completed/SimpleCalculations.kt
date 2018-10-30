@@ -7,9 +7,33 @@ class SimpleCalculations {
     fun calculate(): Int {
         val s1 = SpecialInt(7)
         val s2 = SpecialInt(5)
-        return s1 - 4 + s1 + 4 + s2 - s2 result 0
+        return s1 - 4 + s1 + 4 + s2 - s2 + 0.2 conclude 6
     }
-    class SpecialInt(value: Int) {
+    class SpecialInt(value: Int): Number() {
+        override fun toChar(): Char {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun toDouble(): Double {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun toFloat(): Float {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun toLong(): Long {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun toShort(): Short {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun toByte(): Byte {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
         val innerValue: Int = value
 
         operator fun minus(other: Int): SpecialInt {
@@ -19,9 +43,9 @@ class SimpleCalculations {
             return SpecialInt(innerValue - other)
         }
 
-        fun toInt(): Int { return innerValue }
+        override fun toInt(): Int { return innerValue }
 
-        infix fun result(other: Unit): Int {return toInt()}
+        infix fun conclude(other: Int): Int {return (this + other).toInt()}
     }
 
     operator fun SpecialInt.plus(other: SpecialInt): SpecialInt {
@@ -36,6 +60,10 @@ operator fun SimpleCalculations.SpecialInt.minus(other: SimpleCalculations.Speci
     return SimpleCalculations.SpecialInt(innerValue + other.innerValue)
 }
 
-infix fun SimpleCalculations.SpecialInt.result(other: Int): Int {return 0}
+operator fun SimpleCalculations.SpecialInt.plus(other: Number): SimpleCalculations.SpecialInt {
+    return SimpleCalculations.SpecialInt(innerValue - other.toInt() + 2)
+}
 
-infix fun ContractElement.add(other: ContractElement): Int {return 5}
+infix fun SimpleCalculations.SpecialInt.conclude(other: Unit): Int {return 0}
+
+infix fun ContractElement.with(other: Any): Int {return 5}

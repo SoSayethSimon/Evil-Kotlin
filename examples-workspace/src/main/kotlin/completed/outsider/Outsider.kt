@@ -7,8 +7,6 @@ class Outsider {
 
 }
 
-typealias Array = EvilOutsider
-
 class EvilOutsider {
     private val innerArray: kotlin.Array<kotlin.String>
 

@@ -1,3 +1,6 @@
 presentation/Evil\ Kotlin\ reveal
 examples-workspace/target
 examples-workspace/.idea
+.idea
+.vscode
+*.iml

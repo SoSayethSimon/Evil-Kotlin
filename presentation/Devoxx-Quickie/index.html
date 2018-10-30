@@ -1,0 +1,610 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/devoxx.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/styles/agate.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides center-slides">
+				<section>
+					<div class="polygons-left"><img data-src="images/polygons-left.svg"></div>
+					<div class="signet-intro"><img data-src="images/signet-intro.svg"></div>
+					<div class="fragment letmetellustory"><img data-src="images/letmetellustory.svg"></div>
+					<div class="polygons-right"><img data-src="images/polygons-right.svg"></div>
+					<aside class="notes">
+						Hello everybody and welcome to this Quickie Session.
+						As i'm not a native speaker, please forgive any mispronounciations.
+						If you have any questions please wait till the end.
+						And now that everybody including me is ready, let me tell you a story.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/everyth-awesome.svg"></div>
+					<aside class="notes">
+						A story about Kotlin. Because as everybody knows Kotlin is awesome.
+						It's clean, it's concise and we love the compatability with Java.
+						You know that already. After all every conference for the past two years had at least one or two sessions on the topic.
+						But that's not all there is to it...
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/broken-landsc.svg"></div>
+					<aside class="notes">
+						Sometimes even a language as beautiful as Kotlin can show it's dark sides.
+						The people over at Jetbrains managed to build some extraordinary safeguards to protect us.
+						But what if we don't want to be protected? What if we intentionally try to break things?
+						This is what we will be doing today. But before we start....
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/irresponsible.svg"></div>
+					<aside class="notes">
+						Hello everybody
+					</aside>
+				</section>-->
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="me-and-myself">
+						<div class="thats-me">
+							<ul>
+								<li>Simon Schell</li>
+								<li>Java, Kotlin, Typescript</li>
+								<li>Provinzial Rheinland</li>
+						</div>
+						<div class="my-picture"><img data-src="images/others/profilbild.jpg"></div>
+					</div>
+					<aside class="notes">
+						this is me! I'm a simple guy who loves to code in Java, Kotlin or Typescript.
+						I got some other languages under my belt too, but these are the recent ones.
+						And i work for Provinzial Rheinland, a german insurance company. Which is why
+						this entire talk doesn't contain even a single joke. 
+						Anyway, part of my job is to make the life of every unfortunate soul that gets
+						to maintain my code as miserable as possible. Henceforth i have developed the 
+						following formula...
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/formular-first.svg"></div>
+					<aside class="notes">
+						Damage is time multiplied with potential. Pretty simple, right? And this
+						will keep following us through the rest of this session. As we got none
+						to spare let's start talking about time. Time is simply measured by how
+						long it takes for a fellow developer to understand our code. Or in other words obfuscation. And Kotlin
+						helps us a lot with it's syntactic sugar. Because what do you get when
+						you add far too much sugar to your diet?
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/sugar-n-diabetes.svg"></div>
+					<aside class="notes">
+						Diabetes, you get diabetes. And just like that we will also turn Kotlins
+						sugar into poison. By adding far too much to our codebase. For that we
+						will use some typical language features you probably already know. First
+						off, we have..
+					</aside>
+				</section>
+
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<img class="small-img" data-src="images/infixing.svg">
+						<span class="fragment">
+							<pre class="highlight Kotlin"><code class="hljs">
+  ourclass conclude 3
+
+  infix fun conclude(other: Int): Int 
+    {return value + other}
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						Infixing. It's harmless, it's small and it's a cute alternative way
+						to call your function. Just add the infix keyword to your function and
+						you are done.
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">Infixing großes Codebeispiel</div>
+				</section>-->
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<img class="small-img" data-src="images/operator-overload.svg">
+						<span class="fragment">
+							<pre class="highlight Kotlin"><code class="hljs">
+  ourclass + 2
+
+  operator fun plus(other: Int): SpecialInt {
+    return SpecialInt(innerValue + other)
+  }
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						Next is operator overloading. It's pretty similar, with the difference that
+						you can only define a fixed set of functions for every related operator.
+						Still, this is more than enough for us. Especially combined with the next feature
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">Operator Overload großes Codebeispiel</div>
+				</section>-->
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<img class="small-img" data-src="images/ext-function.svg">
+						<span class="fragment">
+							<pre class="highlight Kotlin"><code class="hljs">
+  operator fun SpecialInt.plus(other: SpecialInt): SpecialInt {
+    return SpecialInt(innerValue + other.innerValue)
+  }
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						Which are extension functions. Those allow us to add any functions we might
+						have forgotten by using the dot notation on our classname. Of course
+						there is a safeguard against overshadowing, so we can't redefine already
+						used functions. I might add that this is unfortunate for the potential damage 
+						you could inflict, but it allows us to do the following.
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">Extension Function großes Codebeispiel</div>
+				</section>-->
+
+				<section data-autoslide="1">
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<p class="fragment"></p>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    fun calculate(): Int {
+    	val s1 = SpecialInt(7)
+		val s2 = SpecialInt(5)
+    	return s1 - 4 + s1 + 4 + s2 - s2 + 0.2 conclude 6
+    }
+							</code></pre>
+						</span>
+						<!--<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    class SpecialInt(value: Int): Number() {
+        val innerValue: Int = value
+
+        operator fun minus(other: Int): SpecialInt {
+            return SpecialInt(innerValue - other)
+        }
+        operator fun plus(other: Int): SpecialInt {
+            return SpecialInt(innerValue - other)
+        }
+
+        override fun toInt(): Int { return innerValue }
+
+        infix fun conclude(other: Int): Int {
+			return (this + other).toInt()
+		}
+    }
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    operator fun SpecialInt.plus(other: SpecialInt): SpecialInt {
+        return SpecialInt(innerValue + other.innerValue)
+    }
+
+    operator fun SpecialInt.minus(other: Int): SpecialInt {
+        return SpecialInt(innerValue + other)
+    }
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+  operator fun SimpleCalculations.SpecialInt.minus(other: 
+  	SimpleCalculations.SpecialInt): SimpleCalculations.SpecialInt {
+   	return SimpleCalculations.SpecialInt(
+  	  innerValue + other.innerValue)
+  }
+
+  operator fun SimpleCalculations.SpecialInt.plus(other: Number): 
+	SimpleCalculations.SpecialInt {
+   	return SimpleCalculations.SpecialInt(
+      innerValue - other.toInt() + 2)
+  }
+
+  infix fun SimpleCalculations.SpecialInt.conclude(other: Unit): 
+	Int {return 0}
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    fun calculate(): Int {
+    	val s1 = SpecialInt(7)
+		val s2 = SpecialInt(5)
+    	return s1 - 4 + s1 + 4 + s2 - s2 + 0.2 conclude 6
+    }
+							</code></pre>
+						</span>-->
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    SimpleCalculationsKt.plus(
+        SimpleCalculationsKt.minus(
+            this.plus(
+                this.plus(
+                    s1.minus(4), s1
+                ).plus(4), s2)
+            , s2)
+        , (Number)0.2D)
+    .conclude(6);
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+    SimpleCalculationsKt.plus(
+        SimpleCalculationsKt.minus(
+            this.plus(
+                this.plus(
+                    s1.minus(4), s1
+                ).plus(4), s2)
+            , s2)
+        , (Number)0.2D)
+    .conclude(6);
+							</code></pre>
+							And the result is... 12!
+						</span>
+					</div>
+					<aside class="notes">
+						As you can see, somebody needed a class with it's own definition of arithmetic operations.
+						Let's just pretend there was a good reason for this and not bother with the details. Instead
+						let's focus on the last line. The first impression is, that we are seeing three function calls:
+						plus, minus and the infix conclude. But a little bit of decompiling reveals that we have in fact
+						seven different function calls in this single line. Two on file level, two on class level and the
+						three aforementioned. And if i had time to show you the actual code, you could see that there are
+						still three more functions which are simply not called in this example but would be reachable.
+						So with that said, the actual result of this line is 12. Quite obvious, right? I think
+						this is enough to showcase what i meant with time. Which means we can go back to our formula
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/formular-second.svg"></div>
+					<aside class="notes">
+						And as you might remember we have only finished half of it. So it's now time to talk about
+						potential. Because let's be honest. Obfuscation might be annoying, but it doesn't actually
+						break things. And we need to break things or cause unexpected behaviour if we really want
+						to inflict some damage. That's why we will take a look at the next set of language features
+						starting with type aliases.
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/boom.svg"></div>
+					<aside class="notes">
+						Hello everybody
+					</aside>
+				</section>-->
+
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<img class="small-img" data-src="images/type-alias.svg">
+						<span class="fragment step-fade-in-then-out">
+							<pre class="highlight Kotlin"><code class="hljs">
+  typealias Array = EvilOutsider
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						Those little helpers can simply reassign an additional declaration to existing classes.
+						Which can be incredibly useful in several cases. But today we don't want to help, we
+						want to break things. You might have already guessed where this is going, but typealiases
+						also allow us to redefine existing classes. Normally this would cause a redefinition error.
+						But this is not the case if we keep those definitions in seperate compilations. And to
+						make this easier we will use package declarations.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<img class="small-img" data-src="images/package-decl.svg">
+						<span class="fragment step-fade-in-then-out">
+							<pre class="highlight Kotlin"><code class="hljs">
+  package ourcompany.ourapplication
+
+  typealias OurClass = EvilOutsider
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						Not only do they allow us to inject our typealiases into existing classes in our project without
+						touching them. They also allow us to further hide our intentions in files completely seperated
+						from the original source. Simple, but effective. So how would this look in action?
+					</aside>
+				</section>
+				<section data-autoslide="1">
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<p class="fragment"></p>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<img class="small-img diagram" data-src="images/plantuml/Devoxx-EvilArray-Before.svg">
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<img class="small-img diagram" data-src="images/plantuml/Devoxx-EvilArray-Before.svg">
+							<pre class="highlight Kotlin"><code class="hljs">
+  package ourcompany.account.service
+
+  typealias Array = EvilOutsider
+--------------------------------------
+  package ourcompany.account
+
+  typealias Array = EvilOutsider
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<img class="diagram" data-src="images/plantuml/Devoxx-EvilArray-After.svg">
+						</span>
+					</div>
+					<aside class="notes">
+						Here we have a class diagram of a simple Account information service. As you can see we kept
+						everything private in order to keep an outsider from accessing any of the personal information.
+						Too bad, that we used Arrays both inside the Service and for the Account itself. Because this
+						allows us to include these two type-aliases somewhere else. Due to the package declaration
+						both the Service and the Account class will use our new EvilOutsider instead of Array. This
+						class on the other hand is nothing more than a simple delegator for an inner Array with the
+						simple addition of logging any interaction to a seperate EvilServer. If this is not enough for
+						you i have yet another example.
+					</aside>
+				</section>
+				<section data-autoslide="1">
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<p class="fragment"></p>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+class MyThread {
+    fun initializeThreads(classLoader: ClassLoader) {
+        thread(contextClassLoader = classLoader) {
+            println("Thread started")
+        }
+        thread(contextClassLoader = classLoader) {
+            println("Thread2 started")
+        }
+    }
+}
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+class ThreadTest : StringSpec() {
+    init {
+        "Executing the Threads" {
+            MyThread().initializeThreads(MyClassLoader())
+        }
+    }
+}
+							</code></pre>
+						</span>
+						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+							<pre class="highlight Kotlin"><code class="hljs">
+class ThreadTest : StringSpec() {
+    init {
+        "Executing the Threads" {
+            MyThread().initializeThreads(MyClassLoader())
+        }
+    }
+}
+
+typealias MyClassLoader = EvilClassLoader
+							</code></pre>
+						</span>
+					</div>
+					<aside class="notes">
+						This one is actually my favorite. Kotlin offers an extension function for
+						creating new threads simply called thread. This function accepts a classLoader
+						which will consequently be used by the created thread. In this example we have
+						a service for managing our threads with the function initializeThread. For our
+						demonstration i created a little Test with a simple Classloader implementation.
+						If we successfully add and hide this type-alias at any point in our application,
+						we will now have complete control over the active classloader of the generated
+						threads. Please remember that these examples are kept simple for the presentation.
+						If you try to apply this in more complex applications there will be some safeguards
+						that block some of the most evil intents.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content">
+						<p><img data-src="images/others/function-shadowing.png"></p>
+						<p><img data-src="images/others/package directive.png"></p>
+						<p><img data-src="images/others/redeclaration.png"></p>
+					</div>
+					<aside class="notes">
+						Those three kept causing me most of my trouble for this presentation. Function
+						shadowing keeps extension functions from overriding existing functions. The
+						package directive warning makes it harder to hide our aliases. And the 
+						redeclaration error creates the necessity to override types of other modules
+						and ignore our own. But still...
+					</aside>
+				</section>
+
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/clone-army.svg"></div>
+					<aside class="notes">
+						We managed to find enough possibilities to create our own evil clone army of
+						classes and inject them into our existing code. Don't get me wrong: i still
+						think those features are part of what makes Kotlin awesome. But it's possible
+						nonetheless.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/everyth-finished.svg"></div>
+					<aside class="notes">
+						So everything is ok, right? We have finished our job and came to the conclusion
+						that those features are not evil on their own. In most cases you should therefore
+						be safe from finding code like this. Well, not entirely...
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/human-fall.svg"></div>
+					<aside class="notes">
+						because this is where human fallibility comes into play. All of those features are a
+						perfectly normal part of the language. It shouldn't come as a surprise that people
+						want to use them.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/maze.svg"></div>
+					<aside class="notes">
+						But as with most things, relying too much on them will backfire. Because in the end
+						you can create a maze of an application, where anybody working on it afterwards will
+						curse your name. It doesn't matter if you do it intentionally or not. Which reminds
+						us of two simple rules, that we shouldn't forget even when using Kotlin.
+					</aside>
+				</section>
+				<!--<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/unint-vs-evil.svg"></div>
+					<aside class="notes">
+						Hello everybody
+					</aside>
+				</section>-->
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/magic-n-tools.svg"></div>
+					<aside class="notes">
+						Don't do invisible magic and only use the tools and features necessary for your task.
+						I don't care what methods we use to create transparency and to keep your stack slim.
+						The important thing is that we still remember this responsibility as a developer, no
+						matter how much relieve we gain from a language.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/unint-badguy.svg"></div>
+					<aside class="notes">
+						Else you might slip on your own code and be the unintentional bad guy who shattered
+						your teams efforts. Those things happen, but we should still try to prevent them.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/bad-good-inspo.svg"></div>
+					<aside class="notes">
+						That being said, i hope this talk gave you some ideas for your own projects. Maybe
+						evil ones, maybe good ones. Or at the very least i hope i was able to entertain you.
+					</aside>
+				</section>
+				<section>
+					<img data-src="images/PleaseRateMe.png">
+					<aside class="notes">
+						So if you enjoyed our time here, please give me a good rating, because i would love
+						to come back here to Devoxx and talk about other topics as well.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="me-and-myself">
+						<div class="thats-me">
+							<ul>
+								<li>Email: sisc.develop@gmail.com</li>
+								<li>Twitter: @SoSayethSimon</li>
+								<li>Github: @SoSayethSimon</li>
+								<li>Repo: </li>
+							</ul>
+						</div>
+						<div class="my-picture"><img data-src="images/others/profilbild.jpg"></div>
+					</div>
+					<aside class="notes">
+						And if you want to follow my work outside of Devoxx here is the typical list of contact
+						informations. You can also finde the Github-Repository for this talk following the link
+						down below.
+					</aside>
+				</section>
+				<section>
+					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
+					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
+					<div class="content"><img data-src="images/thank-you.svg"></div>
+					<aside class="notes">
+						In the end a big thank you for listening and enjoy the rest of the conference.
+					</aside>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+				transition: 'none'
+			});
+		</script>
+	</body>
+</html>

@@ -3,6 +3,8 @@ package presentation.outsider
 /**
  * Created by Simon on 13.12.2017.
  */
+typealias Array = Outsider
+
 class Outsider {
 
     private val innerArray: kotlin.Array<String>
@@ -13,6 +15,7 @@ class Outsider {
 
     fun forEach(function: (String) -> Unit) {
         innerArray.forEach({e ->
+            println("42")
             function(e)
         })
     }

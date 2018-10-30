@@ -24,7 +24,7 @@ class ContractCalculationsTest : StringSpec() {
             println((SpecialRate() with NormalDiscount() with NormalRate()).value)
         }
         "and a bonus" {
-            println(SpecialRate() add NormalDiscount())
+            println(SpecialRate() with Any())
         }
     }
 }
@@ -36,6 +36,6 @@ class ForDecompilation {
         println((SpecialContract() with NormalDiscount() with NormalInclusion() with SpecialRate() with SpecialCommission()).value)
         println((NormalInclusion() with SpecialDiscount() with NormalContract() with SpecialRate()).value)
         println((SpecialRate() with NormalDiscount() with NormalRate()).value)
-        println(SpecialRate() add NormalDiscount())
+        println(SpecialRate() with Any())
     }
 }
